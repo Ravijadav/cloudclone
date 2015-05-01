@@ -6,20 +6,21 @@ var bodyParser = require('body-parser');
 
 router.get('/',function(req,res){
 
-mongoose.connect('mongodb://52.74.34.118/test');   
+mongoose.connect('mongodb://localhost/test');   
 var login=require('./schema.js');
 
 var username=req.param('uname');
+var password=req.param('password');
 
 console.log(username);
 
-login.remove({uname:username},function(err,result){
+login.update({uname:username},{$set:{pass:password}},function(err,result){
                                 if(!err){
-                                    console.log('deletion done succesfully')
+                                    console.log('update done succesfully')
                                     if(result===1)
-                                    {res.send('deletion done succesfully')}
+                                    {res.send('update done succesfully')}
                                     else
-                                     {res.send('No data is deleted')}
+                                     {res.send('No data is updated')}
                                     mongoose.disconnect();
                                     }
                                     })

@@ -25,7 +25,7 @@ updateInterest.post('/',function(req,res){
 
     var consumer=require('./consumerSchema.js');
 
-    mongoose.connect('mongodb://localhost/houseServices',function(err){
+    mongoose.connect('mongodb://52.74.34.118/houseServices',function(err){
       if(err){
         console.log(err);
       }
