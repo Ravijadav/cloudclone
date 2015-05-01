@@ -15,7 +15,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 router.get('/:id',function(req,res){
-mongoose.connect('mongodb://52.74.34.118/houseServices');
+mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com/houseServices');
 
 
 var customer=require('./consumerSchema.js');
@@ -39,7 +39,7 @@ customer.find({_id:id},function(err,stu){
 
 router.get('/',function(req,res){
 
-mongoose.connect('mongodb://52.74.34.118/houseServices');
+mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com/houseServices');
 var customer=require('./consumerSchema.js');
 	
 
@@ -61,7 +61,7 @@ customer.find({},function(err,stu){
 
 router.post('/',function(req,res){
      
-var conn=mongoose.connect('mongodb://52.74.34.118/houseServices');   
+var conn=mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com/houseServices');   
 var consumer=require('./consumerSchema.js');
 var provider=require('./providerSchema.js');
 
@@ -95,7 +95,7 @@ var newConsumer = new consumer(req.body);
 
 router.delete('/:id',function(req,res){
 
-mongoose.connect('mongodb://52.74.34.118/houseServices');   
+mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com/houseServices');   
 var customer=require('./customerSchema.js');
 
 var id=req.params.id;

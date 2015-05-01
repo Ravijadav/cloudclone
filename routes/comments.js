@@ -11,7 +11,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 comment.post('/:eventN/:user',function(req,res){
      
-var conn=mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com/houseServices');   
+var conn=mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices');   
 
 var provider=require('./providerSchema.js');
 

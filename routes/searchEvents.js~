@@ -13,7 +13,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 searchEvents.get('/:interest/:user',function(req,res){
     
 
-var conn=mongoose.connect('mongodb://52.74.34.118/houseServices');   
+var conn=mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com/houseServices');   
 var provider=require('./providerSchema.js');
 var interest=req.params.interest;
 var user=req.params.user;
