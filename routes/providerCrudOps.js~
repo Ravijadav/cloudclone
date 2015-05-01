@@ -15,7 +15,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 routerProvider.get('/:eventName/:user',function(req,res){
-mongoose.connect('mongodb://localhost/houseServices');
+mongoose.connect('mongodb://52.74.34.118/houseServices');
 
 
 var provider=require('./providerSchema.js');
@@ -198,7 +198,7 @@ provider.find({eventName:eventName},function(err,eventDetail){
 
 routerProvider.get('/',function(req,res){
 
-mongoose.connect('mongodb://localhost/houseServices');
+mongoose.connect('mongodb://52.74.34.118/houseServices');
 var provider=require('./providerSchema.js');
 	
 
@@ -220,7 +220,7 @@ provider.find({},function(err,stu){
 
 routerProvider.post('/',function(req,res){
             
-var conn=mongoose.connect('mongodb://localhost/houseServices');   
+var conn=mongoose.connect('mongodb://52.74.34.118/houseServices');   
 var provider=require('./providerSchema.js');
 
 
@@ -239,7 +239,7 @@ console.log("user is:"+newProvider);
 
 routerProvider.delete('/:id',function(req,res){
 
-mongoose.connect('mongodb://localhost/houseServices');   
+mongoose.connect('mongodb://52.74.34.118/houseServices');   
 var provider=require('./providerSchema.js');
 
 var id=req.params.id;

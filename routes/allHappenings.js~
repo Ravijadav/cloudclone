@@ -13,7 +13,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 allHappenings.get('/:interest/:user/:location',function(req,res){
     
 
-var conn=mongoose.connect('mongodb://localhost/houseServices',function(err){
+var conn=mongoose.connect('mongodb://52.74.34.118/houseServices',function(err){
 			if(err){console.log(err)}
 });   
 var provider=require('./providerSchema.js');

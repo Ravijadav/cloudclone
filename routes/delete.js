@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 router.get('/',function(req,res){
 
-mongoose.connect('mongodb://52.74.34.118/test');   
+mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com/test');   
 var login=require('./schema.js');
 
 var username=req.param('uname');

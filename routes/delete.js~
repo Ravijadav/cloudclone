@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 
 router.get('/',function(req,res){
 
-mongoose.connect('mongodb://localhost/test');   
+mongoose.connect('mongodb://52.74.34.118/test');   
 var login=require('./schema.js');
 
 var username=req.param('uname');
