@@ -8,11 +8,11 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 events.get('/',function(req,res){
-mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log('can not connect succesfully')}});
+mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log('can not connect succesfully')}});
 
 var user=req.param('uname');
 var password=req.param('pass');
-var nearestLocation='Electronic City1'
+var nearestLocation='Electronic city phase2'
 
 var provider=require('./providerSchema.js');
 var consumer=require('./consumerSchema.js');
@@ -123,7 +123,7 @@ var consumer=require('./consumerSchema.js');
 
 $("#user").text("Welcome "+user);
 	
-mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
+mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
 consumer.find({userName:user},function(err,interests){
  if(err){console.log(err)}
 
@@ -139,12 +139,12 @@ consumer.find({userName:user},function(err,interests){
     interest1=interests[0].interestCategory1;	
     interest2=interests[0].interestCategory2;
     interest3=interests[0].interestCategory3;
-    consumerLocation="ec2";
+    consumerLocation="Electronic city phase1";
     
     	
     	mongoose.disconnect(function(err){if(err){console.log(err)}});	
     	
-    	mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
+    	mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
           
     provider
         .find({category:interest1,location:consumerLocation})
@@ -159,6 +159,7 @@ consumer.find({userName:user},function(err,interests){
         		    mongoose.disconnect(function(err){if(err){console.log(err)}});
         
         var link="http://52.74.158.222:3000/providers/";	
+	
         $("#interest1").text(providers1[0].category);
    			$("#eventName1").text(providers1[0].eventName);
    			$("#eventName2").text(providers1[1].eventName);
@@ -193,7 +194,7 @@ consumer.find({userName:user},function(err,interests){
    		
    		
    		
-   			mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
+   			mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
    			provider.find({category:interest2,location:consumerLocation})
                 .limit(3)
                 .sort('-likes')
@@ -238,7 +239,7 @@ consumer.find({userName:user},function(err,interests){
    					}
    					
    					
-   					mongoose.connect('mongodb://clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
+   					mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
    					provider.find({category:interest3,location:consumerLocation})
                     .sort('-likes')
                     .select('eventName category')
