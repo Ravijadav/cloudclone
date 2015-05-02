@@ -8,7 +8,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 
 
 events.get('/',function(req,res){
-mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log('can not connect succesfully')}});
+mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000,clouddata-1.cloud1.2971.mongodbdns.com:27000,clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log('can not connect succesfully')}});
 
 var user=req.param('uname');
 var password=req.param('pass');
@@ -123,7 +123,7 @@ var consumer=require('./consumerSchema.js');
 
 $("#user").text("Welcome "+user);
 	
-mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
+mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000,clouddata-1.cloud1.2971.mongodbdns.com:27000,clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
 consumer.find({userName:user},function(err,interests){
  if(err){console.log(err)}
 
@@ -144,7 +144,7 @@ consumer.find({userName:user},function(err,interests){
     	
     	mongoose.disconnect(function(err){if(err){console.log(err)}});	
     	
-    	mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
+    	mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000,clouddata-1.cloud1.2971.mongodbdns.com:27000,clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
           
     provider
         .find({category:interest1,location:consumerLocation})
@@ -194,7 +194,7 @@ consumer.find({userName:user},function(err,interests){
    		
    		
    		
-   			mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){if(err){console.log(err)}});
+   			mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000,clouddata-1.cloud1.2971.mongodbdns.com:27000,clouddata-0.cloud1.2971.mongodbdns.com:27000//houseServices',function(err){if(err){console.log(err)}});
    			provider.find({category:interest2,location:consumerLocation})
                 .limit(3)
                 .sort('-likes')

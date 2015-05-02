@@ -13,7 +13,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 allHappenings.get('/:interest/:user/:location',function(req,res){
     
 
-var conn=mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){
+var conn=mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000,clouddata-1.cloud1.2971.mongodbdns.com:27000,clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices',function(err){
 			if(err){console.log(err)}
 });   
 var provider=require('./providerSchema.js');

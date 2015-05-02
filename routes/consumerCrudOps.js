@@ -95,7 +95,7 @@ var newConsumer = new consumer(req.body);
 
 router.delete('/:id',function(req,res){
 
-mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000/houseServices');   
+mongoose.connect('mongodb://clouddata-2.cloud1.2971.mongodbdns.com:27000,clouddata-1.cloud1.2971.mongodbdns.com:27000,clouddata-0.cloud1.2971.mongodbdns.com:27000/houseServices');   
 var customer=require('./customerSchema.js');
 
 var id=req.params.id;
